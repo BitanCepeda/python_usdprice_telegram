@@ -2,7 +2,7 @@
 import requests
 import schedule
 
-# Conertion ready
+# Convertion ready
 url = 'https://api.exchangerate.host/latest'
 response = requests.get(url)
 data = response.json()
@@ -20,7 +20,7 @@ def bot_send_text(bot_message):
     return response
 
 
-# main function - run evrey day at 08:00
+# main function - run every day at 08:00
 if __name__ == '__main__':
     schedule.every().day.at("08:00").do(bot_send_text, info)
     while True:
